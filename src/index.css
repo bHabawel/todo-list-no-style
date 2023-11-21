@@ -46,7 +46,8 @@ body {
 .list-container {
   padding-left: 0;
   display: grid;
-  grid-template-columns: 1fr auto;
+  gap: 0.5rem;
+  grid-template-columns: auto auto auto;
 }
 
 .list-item {

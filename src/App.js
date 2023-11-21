@@ -71,9 +71,19 @@ function TodoList({ onShowList, onDeleteList }) {
 }
 
 function TodoContent({ onShowList, onDeleteList }) {
+  const [isDone, setIsDone] = useState(false);
   return (
     <>
-      <li className="list-item">{onShowList.item}</li>{" "}
+      <input
+        type="checkbox"
+        onClick={() => setIsDone((currState) => !currState)}
+      />
+      <li
+        className="list-item"
+        style={isDone ? { textDecoration: "line-through" } : {}}
+      >
+        {onShowList.item}
+      </li>{" "}
       <button
         className="remove-button"
         onClick={() => onDeleteList(onShowList.id)}
